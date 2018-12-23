@@ -8,10 +8,34 @@
 
 #import <Foundation/Foundation.h>
 
+enum OperationType{
+    add,
+    subtract,
+    multiply,
+    divide
+};
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        int firstN=10,secondN=30,result=0;
+        
+        enum OperationType currentOperation = add;
+        switch (currentOperation){
+            case add:
+                result = firstN + secondN;
+                break;
+            case subtract:
+                result = firstN - secondN;
+                break;
+            case multiply:
+                result = firstN * secondN;
+                break;
+            case divide:
+                result = firstN/secondN;
+                break;
+        }
+        NSLog(@"%d",result);
+        
     }
     return 0;
 }
